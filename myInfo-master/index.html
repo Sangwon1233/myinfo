@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- ProgressBar.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/progressbar.js/dist/progressbar.min.js"></script>
+  
+  <style>
+    @media(max-width: 1320px) {
+      .main-bottom-card{
+        flex-direction: column;
+      }
+      .main-bottom-card > .card{
+        margin-bottom:10px;
+      }
+      .target-card {
+        max-width: none !important;
+      }
+
+    }
+
+    @media(max-width: 1140px) {
+      .main-top > img {
+        display: none;
+
+      }
+    }
+
+    @media(max-width: 720px) {
+      header {
+        display: none !important;
+      }
+      .wrap {
+        flex-direction: column;
+      }
+      .header-menu {
+        display: block !important;
+      }
+    }
+
+    @media(max-width: 576px) {
+      .main-bottom-title{
+        flex-direction: column;
+        align-items: flex-start !important;
+      }
+      .card-header > div{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+    }
+    
+    .target-card{
+      max-width: 750px;
+    }
+    .card-header img {
+      width : 80px;
+      height : 80px;
+      object-fit : cover;
+    }
+    .container-circle {
+      width: 70px;
+      height: 70px;
+      margin: 5px 10px;
+    }
+    .back-ground {
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.7)),
+        url("KakaoTalk_20250107_225308438.jpg");
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(50%);
+      top: 0px;
+      left: 0px;
+    }
+
+
+    /* .main-bottom-card > .card {
+        
+		    transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		
+		.main-bottom-card > .card:hover {
+      z-index:2000;
+		    transform: scale(1.1);
+		} */
+
+  </style>
+
+</head>
+<body>
+  <div class="wrap px-4 py-3 d-flex">
+
+    <!-- 사이드 메뉴 -->
+    <header class="card vh-100" style="min-width: 302px;">
+      <div class="card-header text-center py-5 px-4">
+        <img src="sangwon.jpg" class="rounded-circle" alt="img">
+        <div class="mt-2">
+          <h3 class="fw-bold">Lee Sang Won</h3>
+          <p class="m-0 small">도전 정신의 개발자</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <p class="fw-bold">경력</p>
+          <p class="text-secondary">프로그램 경력 없음</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="fw-bold">교육</p>
+          <p class="text-secondary">더 조은 컴퓨터 아카데미(구로)</p>
+        </div>
+
+        <hr>
+        <div class="position-relative d-flex al">
+          <div class="text-center">
+            <div class="container-circle"></div>
+            <p>BackEnd</p>
+          </div>
+          <div class="text-center">
+            <div class="container-circle"></div>
+            <p>FrontEnd</p>
+          </div>
+          <div class="text-center">
+            <div class="container-circle"></div>
+            <p>DataBase</p>
+          </div>
+        </div>
+        
+        <hr>
+        <div>
+          <div class="mb-3 text-end">
+            <div class="mb-1 d-flex justify-content-between">
+              <p class="m-0 text-secondary small">Java</p>
+              <p class="m-0 text-secondary small">60%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+         
+          <div class="mb-3 text-end">
+            <div class="mb-1 d-flex justify-content-between">
+              <p class="m-0 text-secondary small">AWS</p>
+              <p class="m-0 text-secondary small">40%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3 text-end">
+            <div class="mb-1 d-flex justify-content-between">
+              <p class="m-0 text-secondary small">JavaScript & jQuery</p>
+              <p class="m-0 text-secondary small">50%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3 text-end">
+            <div class="mb-1 d-flex justify-content-between">
+              <p class="m-0 text-secondary small">MySQL & MariaDB</p>
+              <p class="m-0 text-secondary small">70%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="card-footer p-3 d-flex justify-content-around ">
+        <a href="tel:010-6486-8097" class="text-light"><i class="fa-solid fa-phone fa-lg"></i></a>
+        <div class="vr"></div>
+        <a href="https://github.com/Sangwon1233" class="text-light"><i class="fa-brands fa-github fa-xl"></i></a>
+        <div class="vr"></div>
+        <a href="mailto:seunghwan94.dev@gmail.com" class="text-light"><i class="fa-solid fa-square-envelope fa-xl"></i></a>
+      </div>
+    </header>
+
+    <!-- 핸드폰사이즈 사이드 메뉴 -->
+    <div class="header-menu mb-3 fixed-top d-none" style="top:10px; left: 10px;">
+      <a class="btn btn-outline-secondary border-0" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="card" style="min-width: 302px;">
+          <div class="card-header text-center py-5 px-4">
+            <img src="sangwon.jpg" class="rounded-circle" alt="img">
+            <div class="mt-2">
+              <h3 class="fw-bold">Lee Sang Won</h3>
+              <p class="m-0 small">도전 정신의 개발자</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p class="fw-bold">경력</p>
+              <p class="text-secondary">프로그램 경력 없음</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="fw-bold">교육</p>
+              <p class="text-secondary">더 조은 컴퓨터 아카데미(구로)</p>
+            </div>
+    
+    
+            <hr>
+            <div class="position-relative d-flex al">
+              <div class="text-center">
+                <div class="container-circle"></div>
+                <p>BackEnd</p>
+              </div>
+              <div class="text-center">
+                <div class="container-circle"></div>
+                <p>FrontEnd</p>
+              </div>
+              <div class="text-center">
+                <div class="container-circle"></div>
+                <p>DataBase</p>
+              </div>
+            </div>
+            
+            <hr>
+            <div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">Java</p>
+                  <p class="m-0 text-secondary small">60%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+             
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">AWS</p>
+                  <p class="m-0 text-secondary small">40%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">JavaScript & jQuery</p>
+                  <p class="m-0 text-secondary small">50%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">MySQL & MariaDB</p>
+                  <p class="m-0 text-secondary small">70%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="card-footer p-3 d-flex justify-content-around ">
+            <a href="tel:010-6486-8097" class="text-light"><i class="fa-solid fa-phone fa-lg"></i></a>
+            <div class="vr"></div>
+            <a href="https://github.com/Sangwon1233" class="text-light"><i class="fa-brands fa-github fa-xl"></i></a>
+            <div class="vr"></div>
+            <a href="mailto:seunghwan94.dev@gmail.com" class="text-light"><i class="fa-solid fa-square-envelope fa-xl"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 -->
+    <main class="w-100">
+      <!-- 메인 header -->
+      <div class="main-top position-relative">
+        <div class="back-ground opacity-25"></div>
+        <div class="back-ground mt-4 ms-3 position-absolute  bottom-0 end-0"></div>
+        <div class="d-flex flex-column position-absolute top-50 start-0 translate-middle-y ps-5">
+          <h1 class="fw-bold text-light">좌우명<br/>일단해라</h1>
+          <p class="fs-5 fw-bold m-0 text-light">&lt;<span class="text-danger"></span>&gt; 최선을 다 한다 &lt;<span class="text-danger"></span>&gt;</p>
+        </div>
+        <!-- <img src="sangwon.jpg" class="position-absolute top-50 translate-middle-y" style="bottom: 0; right: -16px; width: 275px;"> -->
+      </div>
+      <!-- 메인 middle -->
+      <div class="ms-3 main-middle d-flex justify-content-around flex-wrap my-5 pt-5">
+        <div class="d-flex align-items-center">
+          <p class="fw-bold text-danger">3년</p>
+          <p class="ms-2">연성대학교 전자과 졸업</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <p class="fw-bold text-danger">4개월</p>
+          <p class="ms-2">(주)와이즈 메디텍 유지보수</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <p class="fw-bold text-danger">2년</p>
+          <p class="ms-2">(주)우미노히</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <p class="fw-bold text-danger">6 개월</p>
+          <p class="ms-2">더조은아카데미(진행중) </p>
+        </div>
+      </div>
+
+        <div class="d-flex justify-content-between main-bottom-card">
+          <div class="card mx-2">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">연성대학교</p>
+                <p class="text-secondary m-0 small">(2016.2 ~ 2022.2)</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="text-danger fw-bold">대학 생활</h5>
+              <div class="p-2">
+                수업 내용<br/>
+                <div class="ps-3">
+                -1학년:c언어,전자회로<br/>-2학년:EPLD,micom,집적회로<br/>-3학년:데이터네트워킹,Linux,PCB,임베디드<br/><br/>
+                </div>
+                대학 생활 요약 내용
+                <div class="ps-3">
+                  -교수님의 추천으로 1,2학년 반대표로 활동<br/>
+                  -1학년 기초적인 수업 및 빵판 실습<br/>
+                  -2학년 이론 수업 및 컴퓨터와 회로를 연결하여 실습<br/>
+                  -3학년 조기 취업으로 2학기 수업 미참여<br/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mx-2">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">병역</p>
+                <p class="text-secondary m-0 small">(2017.04 ~ 2018.12) [1년8개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="text-danger fw-bold">의경 전역</h5>
+              <div class="p-2">
+                근무지<br/>
+                <div class="ps-3">
+                 -광진 경찰서 타격대<br/><br/>
+                </div>
+                군생활 내용
+                <div class="ps-3">
+                  -서울 시내에 대테러 상황 시 출동<br/>
+                  -서울 32개의 다른 경찰서와 체력,사격,MOPP,총기 분해 시험으로 경찰서 평가<br/>
+                  -서울 경찰서 중 평가내용 상위권 유지<br/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mx-2">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">아르바이트</p>
+                <p class="text-secondary m-0 small">(2020.5 ~ 2021.5) [1년]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="text-danger fw-bold">여의도 골프존</h5>              
+                세부 내용
+                <div class="ps-3">
+                  -손님 응대 및 예약 확인<br/>
+                  -다른 알바생들과 잘 어울리며 사장님이 마감을 믿고 맡김<br/>
+                </div>             
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-start main-bottom-card mt-5">
+          <div class="card mx-2">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">(주)와이즈메디텍</p>
+                <p class="text-secondary m-0 small">(2021.8 ~ 2021.12) [4개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="text-danger fw-bold">유지보수</h5>
+              <div class="p-2">
+                업무 내용<br/>
+                <div class="ps-3">
+                 -채혈실에 납품한 의료 기기 문제 해결<br/><br/>
+                </div>
+                세부 내용
+                <div class="ps-3">
+                  - 대표적인 병원으론 서울 아산 병원,부천 성모 병원에서 활동<br/>
+                  &emsp;→ 직접 병원에 방문하여 프로그래머와 전화로 협력하여 문제 해결<br/>
+                  - 부천 성모병원 채혈실에 장비 설치 및 서버 연결<br/>
+                  &emsp;→ 병원에서 사수와 거의 함께 한달정도 상주하며 정상화 작동<br/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mx-2">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">(주)우미노히</p>
+                <p class="text-secondary m-0 small">(2022.06 ~ 2024.6) [2년]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="text-danger fw-bold">청담 일식 오마카세 주방 보조</h5>
+              <div class="p-2">
+                업무 내용<br/>
+                <div class="ps-3">
+                  재료 준비,주방 보조,손님 응대<br/><br/>
+                </div>
+                업무 세부 내용
+                <div class="ps-3">
+                  - 오픈 전 음식 재료 손질<br/>
+                  &emsp;→ 오픈 전 재료 손질로 예약 손님 만족도 상승<br/>
+                  - 단골 손님들과 소통<br/>
+                  &emsp;→ 손님들과 소통으로 인한 호감도 및 단골 유지<br/>
+                  - 앞 주방,뒷 주방 보조<br/>
+                  &emsp;→ 사시미,초밥,튀김,생선구이,메인요리을 조리<br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 메인 bottom -3 -->
+        <div class="d-flex align-items-end my-4 main-bottom-title">
+          <p class="fw-bold fs-5 m-0 me-1">Project</p>
+        </div>
+        <div class="d-flex justify-content-start main-bottom-card">
+          <div class="card mx-2 target-card">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">The-k (Team project)</p>
+                <p class="text-secondary m-0 small">(2024.10.29 ~ 2024.11.29) [1개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="text-end mb-2">
+                <a href="https://github.com/Sangwon1233/semi-theK" class="text-secondary text-decoration-none">github 바로가기</a> 
+                <span class="text-secondary"> | </span>
+                <a href="http://mplace.site:8080/k" class="text-secondary text-decoration-none">사이트 바로가기</a>
+              </div>
+              <h5 class="text-danger fw-bold">K-컬쳐 관광객 커뮤니티(정보) 플랫폼 개발 프로젝트</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  Java, JSP, Servlet, MariaDB, MyBatis, AWS, Tomcat<br/><br/>
+                </div>
+                프로젝트 목표
+                <div class="ps-3">
+                  - 정보 공유를 위해 사용자들이 참여하고 소통할 수 있는 사이트를 개설<br/>
+                </div><br/>
+                프로젝트 계획
+                <div class="ps-3">
+                  <img src="img/theKplan.png" class="w-100" alt="semi-project-img">
+                </div><br/>
+                맡은 역할
+                <div class="ps-3">
+                  - 서버 환경 구축, 회원 가입,비밀번호 변경,로그인,마이페이지,DB설계<br/>
+                  &emsp;→ 개인정보 동의 <span class="text-danger">회원 가입 클릭시 개인정보 동의 하지 않으면 가입 불가</span> <br/>
+                  &emsp;→ 회원가입 <span class="text-danger">이메일 인증</span>,<span class="text-danger">비밀번호 2차 확인</span>,<span class="text-danger">가입시 비밀번호 암호화</span><br/>
+                  &emsp;→ 비밀번호 변경 <span class="text-danger">존재하는 아이디의 이메일 인증 성공시 변경가능</span>,<span class="text-danger">비밀번호 변경시 2차 확인</span> <br/>
+                  &emsp;→ 로그인 <span class="text-danger">회원가입시 DB에 저장하여 존재하는 데이터 일 경우 index 페이지로 이동 </span> <br/>
+                  &emsp;→ intro페이지 <span class="text-danger">회원가입,비밀번호 변경,로그인을 비동기로 적용</span> <br/>
+                  &emsp;→ 마이페이지 <span class="text-danger">간단한 정보들 수정시 적용(시간 부족으로 인한 상세한건 실패..)</span> <br/>
+                </div><br/>
+                결과
+                <div class="ps-3">
+                  <img src="그레이 블랙 심플한 마케터 포트폴리오 프레젠테이션.pdf" class="w-100" alt="semi-project-pdf">
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <!-- <div class="card mx-2 ">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">자동 블로그 포스팅 </p>
+                <p class="text-secondary m-0 small">(2023.08.01 ~ 2023.11.16) [3개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="text-end mb-2">
+                <a href="https://github.com/seunghwan94/python-auto_blog_postting" class="text-secondary text-decoration-none">github 바로가기</a> 
+                <span class="text-secondary"> | </span>
+                <a href="https://healthcare77.tistory.com/" class="text-secondary text-decoration-none">블로그 바로가기</a>
+              </div>
+              <h5 class="text-danger fw-bold">ChatGPT를 이용한 자동 블로그 포스팅 프로그램</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  Python (selenium), API 연동(ChatGPT, Tistory, unsplash)<br/><br/>
+                </div>
+                프로젝트 목표
+                <div class="ps-3">
+                  - ChatGPT의 발전에 빠르게 대응하기 위해 관련 기술을 활용하여 블로그 포스팅 자동화 프로그램을 개발<br/>
+                </div><br/>
+                프로젝트 계획
+                <div class="ps-3">
+                  - API 키 및 블로그 기본 설정을 텍스트 파일로 저장<br/>
+                  - main.py 실행 시 저장된 정보를 사용하여 GPT 기반 블로그 게시글을 작성<br/>
+                  - 게시글 작성 완료 후 이미지를 첨부하여 티스토리에 게시글을 게시<br/>
+                  - 게시 성공 여부를 Slack으로 전달<br/>
+                  - BIOS 설정을 통해 컴퓨터가 특정 시간에 자동으로 켜지도록 설정<br/>
+                  - 작업 스케줄러를 사용하여 main.py를 실행하고, 실행 완료 시간에 컴퓨터가 자동으로 꺼지도록 설정<br/>
+                  - API 연동<br/>
+                  &emsp;- ChatGPT : GPTs를 통해 커스텀 하여 블로그 게시글 작성<br/>
+                  &emsp;- Tistory : 게시글 작성되면 올라가는 블로그 사이트<br/>
+                  &emsp;- Unsplash : 주제에 맞는 이미지 저장하여 게시글에 첨부<br/>
+                  &emsp;- Google 스프레드시트 연동 : 허용된 아이디만 프로그램을 사용 가능<br/>
+                  &emsp;- Slack : 게시글 작성 성공/실패 시 슬랙으로 전달<br/>
+                </div><br/>
+                결과
+                <div class="ps-3">
+                  → 블로그 하루 평균 방문자 수 <span class="text-danger">100명</span> 증가<br/>
+                  → 애드센스(광고) <span class="text-danger">승인</span> <br/>
+                  <img src="img/AutoBlogResult.png" class="w-100" alt="chatGPT-project-img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main> -->
+
+  </div>
+  <script>
+    const containers = $('.container-circle');
+    const progressValues = [0.8, 0.6, 0.7, 0.8, 0.6, 0.7];
+    const containerData =  {
+      color: '#6c757d',
+      trailColor: '#eee',
+      trailWidth: 8,
+      duration: 1400,
+      easing: 'bounce',
+      strokeWidth: 10,
+      from: { color: '#dc3545', width: 2 },
+      to: { color: '#dc3545', width: 10 },
+      // Text inside the circle
+      text: {
+        autoStyleContainer: false,
+      },
+      step: function (state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+
+        const value = Math.round(circle.value() * 100);
+        circle.setText(value ? `${value}%` : '');
+      },
+    }
+
+    containers.each(function(i,e){
+      const circle = new ProgressBar.Circle(e,containerData);
+      $(e).css('position', 'relative'); // 부모 컨테이너에 상대 위치 설정
+      $(circle.text).css({
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        fontFamily: '"Raleway", Helvetica, sans-serif',
+        fontSize: '13px',
+      });
+      circle.animate(progressValues[i]); 
+    })
+
+  </script>
+</body>
+</html>
